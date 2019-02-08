@@ -1,0 +1,470 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: #021EA6
+	color: #fff
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+.text-center
+	text-align: center
+
+b, strong
+	font-weight: bold
+
+.header
+  position: absolut
+  z-index: 5
+  background-color: #111111
+  
+
+.container 
+  max-width: 1200px
+  margin: 0 auto
+  
+ 
+.navigation
+  display: flex
+  width: 100%
+  align-items: center
+  justify-content: flex-start
+  padding: 0 20px
+  flex-wrap: wrap
+  ul, li
+    list-style-type: none
+    padding: 0
+    margin: 0
+  ul
+    display: flex    
+    a
+      display: block
+      padding: 15px 20px
+      font-family: inherit
+      color: #ffffff
+      &:hover
+          text-decoration: none
+          background-color: rgba(255, 255, 255, 0.1) 
+               
+.navigation-name
+  font-size: 20px
+  font-weight: 700
+  color: #ffffff 
+  padding: 12px 20px
+  margin: 0 auto
+
+.navigation-phone
+  a
+    color: #ffffff
+    display: block
+    padding: 15px 20px
+    &:hover
+      text-decoration: none 
+      background-color: rgba(255, 255, 255, 0.1) 
+
+.mobile-menu-button
+  display: none
+  color: #ffffff
+  font-size: 18px 
+.menu-btn  
+  padding: 0
+  display: block
+  width: 30px
+  height: 30px
+  position: relative
+  .span, 
+  .span::before, 
+  .span::after
+    position: absolute
+    top: 50%
+    margin-top: -1.5px
+    left: 50%
+    margin-left: -15px            
+    width: 30px
+    height: 3px
+    background-color: #fff
+  
+  .span::before, 
+  .span::after
+    content: ""
+    display: block
+    transition: 0.3s
+  .span::before
+    transform: translateY(-8px)
+  .span::after
+    transform: translateY(8px)
+
+.menu-btn_active
+  .span
+    height: 0    
+  .span::before
+    transform: rotate(45deg)
+  .span::after
+    transform: rotate(-45deg)
+          
+
+
+.navigation-mobile
+  display: flex
+  flex-direction: column
+  // border: 1px solid red
+  align-items: center
+  justify-content: center
+  background-color: #000000
+  padding-bottom: 20px
+  display: none
+  ul, li
+    list-style-type: none
+    padding: 0
+    margin: 0
+  ul
+    width: 100%
+    // border: 1px solid red
+    text-align: center
+  li
+    display: block
+    // border: 1px solid red
+    a
+      display: block
+      padding: 15px 20px      
+      color: #ffffff
+      &:hover
+        text-decoration: none
+        background-color: rgba(255, 255, 255, 0.1)
+
+.navigation-mail
+  display: block
+  color: #ffffff
+  margin-bottom: 20px
+
+.navigation-social
+  display: flex
+  justify-content: center
+  ul, li
+    list-style-type: none
+    padding: 0
+    margin: 0  
+    a
+      display: block
+      color: #000000
+      background-color: #fff
+      padding: 0 5px
+      margin: 4px
+      height: 30px
+      width: 30px
+      line-height: 26px
+      text-align: center
+      border-radius: 50%
+      transition: 0.6s
+      border: 1px solid #ffffff
+      &:hover
+        border: 1px solid #ffffff
+        background-color: #000
+        .fa          
+          color: #ffffff
+.nav-soc-items
+  border: 1px solid red
+  display: flex
+
+.navigation-mobile_active
+  display: flex      
+
+.slidershow-container
+  max-width: 100%
+  position: relative
+  margin: auto
+  height: 94vh  
+  
+.foto-slide
+  position: absolute
+  top: 0
+  left: 0
+  z-index: -5
+  height: 94vh
+  background-size: cover
+  background-image: url('../img/slader_first_section/first_section_slider_1.jpg')
+  background-position: center
+  background-repeat: no-repeat
+  &::after
+    position: absolute
+    z-index: -4
+    left: 0
+    top: 0   
+    content: ""
+    background: linear-gradient(top, rgba(0,20,1,0.0), rgba(0,0,0,0.90))
+    height: 100%    
+    width: 100%
+
+.prev, .next
+  cursor: pointer
+  position: absolute
+  top: 50%
+  width: auto
+  margin-top: -22px
+  margin-left: 15px
+  padding: 3px 12px
+  color: black
+  font-weight: 400
+  font-size: 16px
+  transition: 0.3s ease
+  border-radius: 20px
+  background-color: rgba(255, 255, 255, 1)
+
+.next
+  right: 0
+  margin-right: 15px
+  
+
+.prev:hover, .next:hover
+  background-color: rgba(125, 125, 125, 0.4)
+  text-decoration: none
+  color: #ffffff
+
+.text
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-content: center
+  align-items: center
+  color: #f2f2f2
+  font-size: 12px
+  padding: 0 120px
+  text-align: center
+  // border: 1px solid red
+  height: 100%
+  h2
+    font-family: $default-font
+    font-size: 48px
+    line-height: 60px
+    margin-bottom: 30px
+  p, span
+    font-family: $default-font
+    font-weight: 300
+    font-size: 22px
+    margin: 0
+    
+
+  
+
+
+.dot-items
+  position: absolute
+  bottom: 3%
+  right: 50%
+  margin-right: -21px
+  
+.dot
+  display: block
+  cursor: pointer
+  height: 11px
+  width: 11px
+  margin: 0 4px
+  background-color: #121212
+  border-radius: 50%
+  border: 2px solid #ffffff
+  display: inline-block
+  transition: background-color 0.6s ease
+
+.active, .dot:hover
+  background-color: #ffffff
+
+.fade
+  animation-name: fade
+  animation-duration: 1.5s
+  img
+    display: block
+
+@keyframes fade
+  from
+    opacity: 0
+  to
+     opacity: 1
+
+// section about
+
+.about
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-content: center
+  align-items: center
+  margin-top: 120px
+  margin-bottom: 70px
+
+.about-photo
+  display: block
+  width: 150px
+  height: 150px
+  background-size: cover
+  background-position: center
+  background-repeat: no-repeat 
+  border-radius: 50%
+  
+.about-text
+  max-width: 756px
+  margin: 0 60px
+  text-align: center
+  font-weight: 300
+  font-size: 20px
+  line-height: 1.35em  
+  h2
+    margin-top: 15px
+    font-weight: bold
+    font-size: 34px
+    line-height: 1.45em    
+  b
+    list-style: none
+    font-weight: 300
+    font-size: 16px
+    line-height: 26px    
+  p
+    margin-top: 30px
+    text-align: left
+
+.portfolio
+  display: flex
+  max-width: 100%
+  max-hegiht: 100%
+  // flex-wrap: wrap
+  // border: 1px solid #0000ff
+  margin: 0
+
+.portfolio-item
+  width: 100%
+  height: 33.333vh
+  background-size: cover
+  background-position: center
+  background-repeat: no-repeat
+  position: relative
+  cursor: zoom-in
+  transition: 0.3s
+  &:hover    
+    z-index: 2
+    transform: scale(1.02)
+    transform-origin: left
+    box-shadow: 0 2px 20px 2px rgba(0, 0, 0, 0.45)
+    
+
+.history
+  margin-top: 60px
+  margin-bottom: 110px
+  text-align: center
+  h2
+    font-size: 36px
+    line-height: 1.23
+    font-weight: bold
+  & > p
+    display: block
+    width: 760px
+    margin: 0 auto
+    margin-top: 30px
+    margin-bottom: 60px
+    font-size: 20px
+    line-height: 1.55
+    font-weight: 300
+
+.history-items
+  width: 100%
+  display: flex
+  
+
+.history-img
+  width: 50%
+  height: 400px
+  background-size: cover
+  background-position: center
+  background-repeat: no-repeat 
+  // border: 1px solid red
+  
+
+.history-href
+  display: flex
+  flex-direction: column
+  width: 50%
+  height: 400px
+  color: #424242
+  justify-content: center
+  align-items: center
+  background-color: #ebebeb
+  transition: color 0.3s ease, background-color 0.3s ease
+  &:hover
+    text-decoration: none
+    color: #ffffff
+    background-color: #424242
+  p
+    font-size: 36px
+    font-weight: bold
+    line-height: 1.23
+  span
+    font-weight: 300
+    padding-top: 20px
+    font-size: 16px
+    line-height: 25px
+
+.history-href-first
+  order: -1
+
+.more-history
+  text-align: center
+  margin-bottom: 210px
+ 
+  a
+    display: inline-block    
+    color: #000000
+    padding: 20px 60px
+    font-size: 22px
+    line-height: 28px
+    border: 1px solid #000000
+    transition: 0.3s ease
+    border-radius: 10em
+    font-weight: bold
+    &:hover
+      text-decoration: none
+      color: #ffffff
+      background-color: #424242
+      border: 1px solid #424242
+  
+  
+  
+  
+
+
+
+
+
+  
+
+
+   
+  
+
+
+
+
+
+@import "media" // Always at the end
