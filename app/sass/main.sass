@@ -97,6 +97,7 @@ b, strong
   width: 30px
   height: 30px
   position: relative
+  transition: 0.5s
   .span, 
   .span::before, 
   .span::after
@@ -448,6 +449,102 @@ b, strong
       color: #ffffff
       background-color: #424242
       border: 1px solid #424242
+
+.quote
+  position: relative
+  width: 100%
+  margin-bottom: 100px
+  &::after
+    content: ""
+    position: absolute
+    display: block
+    width: 48px
+    height: 44px
+    z-index: 10
+    right: 50%
+    margin-right: -24px
+    bottom: 3% 
+    background-image: url('../img/quote_cam.png')
+    background-position: center   
+  
+.quote-img
+  position: relative
+  display: flex
+  flex-direction: column
+  width: 100%
+  height: 100vh
+  background-size: cover
+  background-position: center
+  background-repeat: no-repeat
+  background-attachment: fixed
+  z-index: -1
+  justify-content: center
+  align-items: center
+  p, span
+    max-width: 950px
+    text-align: center
+    // border: 1px solid red
+    font-size: 36px
+    line-height: 1.23
+    color: #fff
+    padding-top: 20px
+    padding-bottom: 20px
+    font-weight: bold
+  &::after
+    position: absolute
+    z-index: -4
+    left: 0
+    top: 0   
+    content: ""
+    background: linear-gradient(top, rgba(26,26,26,0.20), rgba(26,26,26,1))
+    height: 100%    
+    width: 100%
+
+.skills
+  text-align: center
+  & > h2
+    font-size: 42px
+    line-height: 1.23
+    font-weight: bold
+    margin-bottom: 30px
+  & > p
+    font-size: 24px
+    line-height: 1.5
+    font-weight: 300
+    margin-bottom: 120px
+    
+
+.skills-item
+  padding-top: 120px
+  // border: 1px solid red
+  background-size: 100px 100px
+  background-image: url(../img/skills/1.svg)
+  background-position: center 0
+  background-repeat: no-repeat
+  &:nth-child(2)
+    background-image: url(../img/skills/2.svg)
+  &:nth-child(3)
+  background-image: url(../img/skills/3.svg)
+
+  b
+    display: inline-block
+    font-size: 30px
+    line-height: 1.17
+    font-weight: bold
+    margin-top: 12px
+    margin-bottom: 20px
+    
+  p
+    font-size: 24px
+    line-height: 1.5
+    font-weight: 300
+    font-size: 16px
+    line-height: 1.55
+
+  
+    
+  
+
   
   
   
