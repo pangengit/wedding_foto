@@ -5861,6 +5861,22 @@ body input:required:valid, body textarea:required:valid {
   border-color: green;
 }
 
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .img-responsive {
   display: block;
   max-width: 100%;
@@ -6596,6 +6612,7 @@ strong {
 
 .skills {
   text-align: center;
+  margin-bottom: 120px;
 }
 
 .skills > h2 {
@@ -6641,6 +6658,109 @@ strong {
   font-weight: 300;
   font-size: 16px;
   line-height: 1.55;
+}
+
+.reviews {
+  padding-top: 200px;
+  background-color: #eeeeee;
+  position: relative;
+}
+
+.reviews::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 160px;
+  height: 1px;
+  top: 50px;
+  left: 50%;
+  margin-left: -80px;
+  background-color: #000000;
+}
+
+.reviews > p {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 30px;
+  line-height: 1.45;
+  font-weight: 300;
+  color: #000;
+  margin-bottom: 100px;
+}
+
+.reviews-item {
+  margin-bottom: 40px;
+}
+
+.reviews-item p {
+  position: relative;
+  display: inline-block;
+  padding: 40px 35px;
+  background-color: #ffffff;
+  -webkit-border-radius: 15px;
+          border-radius: 15px;
+  margin-bottom: 35px;
+  font-size: 18px;
+  line-height: 1.55;
+  font-weight: 300;
+}
+
+.reviews-item p::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 24px;
+  height: 24px;
+  z-index: 10;
+  left: 35px;
+  margin-right: -24px;
+  bottom: -24px;
+  border: 12px solid transparent;
+  border-left: 12px solid #ffffff;
+  border-top: 12px solid #ffffff;
+}
+
+.reviews-item a {
+  display: block;
+  position: relative;
+  padding-left: 58px;
+  color: #030303;
+  font-size: 16px;
+  line-height: 1.35;
+  font-weight: bold;
+  line-height: 50px;
+}
+
+.reviews-item a:hover {
+  color: #030303;
+}
+
+.reviews-item a::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 50px;
+  left: 0;
+  -webkit-background-size: cover;
+          background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  background-image: url("../img/reviews/1.jpg");
+}
+
+.reviews-item .reviews-item-foto-2::before {
+  background-image: url("../img/reviews/2.jpg");
+}
+
+.reviews-item .reviews-item-foto-3::before {
+  background-image: url("../img/reviews/3.jpg");
+}
+
+.reviews-item .reviews-item-foto-4::before {
+  background-image: url("../img/reviews/4.jpg");
 }
 
 /*==========  Desktop First  ==========*/
@@ -6787,6 +6907,9 @@ strong {
     padding: 0 15px;
     line-height: 34px;
   }
+  .skills {
+    margin-bottom: 80px;
+  }
   .skills > h2 {
     font-size: 34px;
     margin-bottom: 20px;
@@ -6802,6 +6925,13 @@ strong {
   .skills-item b {
     margin-left: 0px;
     margin-right: 0px;
+  }
+  .reviews-item {
+    margin-bottom: 25px;
+  }
+  .reviews-item p {
+    padding: 25px 20px;
+    font-size: 16px;
   }
 }
 
