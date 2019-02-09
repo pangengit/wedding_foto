@@ -1,4 +1,4 @@
-   var slideIndex = 1;
+  var slideIndex = 1;
   showSlides(slideIndex);
 
   function plusSlides(n) {
@@ -43,4 +43,5 @@ $('.menu-btn').on('click', function(e) {
     $(this).toggleClass('menu-btn_active');
     $('.navigation-mobile').toggleClass('navigation-mobile_active');
   });
+
 
