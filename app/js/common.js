@@ -45,3 +45,38 @@ $('.menu-btn').on('click', function(e) {
   });
 
 
+
+var slideWIndex = 1;
+showSlidesW(slideWIndex);
+
+function plusWSliders(nw) {
+  showSlidesW(slideWIndex += nw);
+}
+
+function currentWSlide(nw) {
+  showSlidesW(slideWIndex = nw);
+}
+
+function showSlidesW(nw) {
+  var iw;
+  var slidesW = document.getElementsByClassName('mysliders-w');
+  var dotWs = document.getElementsByClassName('dot-w');
+
+  if (nw > slidesW.length) {
+    slideWIndex = 1;
+  }
+  if (nw < 1) {
+    slideWIndex = slidesW.length;
+  }
+
+  for (iw = 0; iw < slidesW.length; iw++) {
+    slidesW[iw].style.display = "none";
+  }
+
+  for (iw = 0; iw < dotWs.length; iw++) {
+    dotWs[iw].className = dotWs[iw].className.replace("active-w", "");
+  }
+
+  slidesW[slideWIndex-1].style.display = "block";
+  dotWs[slideWIndex-1].className += " active-w";
+}

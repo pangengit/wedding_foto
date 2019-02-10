@@ -316,9 +316,9 @@ b, strong
     display: block
 
 @keyframes fade
-  from
+  0%
     opacity: 0
-  to
+  100%
      opacity: 1
 
 // section about
@@ -662,28 +662,117 @@ b, strong
       background-color: #D69BDD
   
 
+.second-slider
+  // border: 1px solid red
+  padding: 0 100px
+  margin-bottom: 120px
+   
+  
+.slider-w-container
+  max-width: 1000px
+  height: 100%
+  position: relative
+  margin: auto
+
+.prev-w, .next-w
+    text-align: center
+    cursor: pointer
+    position: absolute
+    top: 50%
+    width: 46px
+    hegiht: 46px
+    margin-top: -23px
+    margin-left: -70px
+    color: #ffffff
+    font-weight: 400
+    font-size: 16px
+    line-height: 44px
+    transition: 0.3s ease
+    border-radius: 10em
+    background-color: #E8E8E8
+
+.next-w
+  right: 0
+  margin-right: -70px
+
+.prev-w:hover, 
+.next-w:hover
+  background-color: rgba(125, 125, 125, 0.9)
+  text-decoration: none
+  color: red
+
+
+// .prev-w,
+// .next-w
+//   cursor: pointer
+//   position: absolute
+//   top: 50%
+//   width: auto
+//   margin-top: -22px
+//   padding: 16px
+//   color: #ffffff
+//   font-weight: bold
+//   font-size: 18px
+//   transition: 0.4s ease
+//   border-radius: 0 3px 3px 0
+//   &:hover
+//     background-color: rgba(0, 0, 0, 0.8)
+
+// .next-w
+//   right: -30px
+//   broder-radius: 3px 0 0 3px
+
+.dot-w
+  cursor: pointer
+  height: 13px
+  width: 13px
+  margin: 0 2px
+  background-color: #bbb
+  border-radius: 50%
+  display: inline-block
+  transition: background-color 0.3s ease
+
+.active-w, .dot-w:hover
+  background-color: #717171
+
+
+
+
+
+
 
 
 .footer
+  width: 100%
+  height: 550px
+  // border: 1px solid red
+  position: relative
   display: flex
   flex-direction: column
   justify-content: center
   align-items: center
-  position: relative
+  h2
+    color: #fff
+    font-size: 48px
+  span, p
+    color: #fff
+    font-size: 18px
+    font-weight: 300
+    line-height: 1.35em
+  
+.container-image
+  display: flex
+  position: absolute
+  z-index: -10
+  flex-direction: column
+  justify-content: center  
   width: 100%
-  height: 550px
+  height: 100%
   background-color: #fff
   background-size: cover
   background-position: center
   background-repeat: no-repeat
   color: #ffffff
-  z-index: -1
-  h2
-    font-size: 48px
-  span, p
-    font-size: 18px
-    font-weight: 300
-    line-height: 1.35em
   &::after
     position: absolute
     content: ''
@@ -697,6 +786,8 @@ b, strong
   
 
 .footer-soc
+  position: relative
+  z-index: 20
   // border: 1px solid red
   display: flex
   justify-content: center
@@ -704,8 +795,9 @@ b, strong
   ul, li
     list-style-type: none
     padding: 0
-    margin: 0  
+    margin: 0
   a
+    z-index: 20
     display: block
     color: #000000
     background-color: #fff
@@ -718,18 +810,29 @@ b, strong
     text-align: center
     border-radius: 50%
     transition: 0.6s
-    // border: 1px solid #ffffff
-    &:hover
-      // border: 1px solid #ffffff
-      background-color: rgba(0, 0, 0, 0.0)
-      .fa          
+    border: 1px solid #ffffff
+    .fa          
         color: #3A0E3C
-  
-  
+    &:hover
+      cursor: pointer
+      background-color: rgba(0, 0, 0, 0.0)
+      border: 1px solid #ffffff
+      .fa          
+        color: #ffffff
   
 
-
-
+.footer-developer
+  background-color: #222222
+  text-align: center
+  color: #ffffff
+  padding: 20px 40px
+  margin: 0 auto
+  font-size: 18px
+  line-height: 18px
+  font-weight: 300
+  p 
+    padding: 0
+    margin: 0
 
 
   

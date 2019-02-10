@@ -6297,19 +6297,19 @@ strong {
 }
 
 @-webkit-keyframes fade {
-  from {
+  0% {
     opacity: 0;
   }
-  to {
+  100% {
     opacity: 1;
   }
 }
 
 @keyframes fade {
-  from {
+  0% {
     opacity: 0;
   }
-  to {
+  100% {
     opacity: 1;
   }
 }
@@ -6789,7 +6789,73 @@ strong {
   background-color: #D69BDD;
 }
 
+.second-slider {
+  padding: 0 100px;
+  margin-bottom: 120px;
+}
+
+.slider-w-container {
+  max-width: 1000px;
+  height: 100%;
+  position: relative;
+  margin: auto;
+}
+
+.prev-w, .next-w {
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: 46px;
+  hegiht: 46px;
+  margin-top: -23px;
+  margin-left: -70px;
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 44px;
+  -webkit-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease;
+  -webkit-border-radius: 10em;
+          border-radius: 10em;
+  background-color: #E8E8E8;
+}
+
+.next-w {
+  right: 0;
+  margin-right: -70px;
+}
+
+.prev-w:hover,
+.next-w:hover {
+  background-color: rgba(125, 125, 125, 0.9);
+  text-decoration: none;
+  color: red;
+}
+
+.dot-w {
+  cursor: pointer;
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: #bbb;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  display: inline-block;
+  -webkit-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+
+.active-w, .dot-w:hover {
+  background-color: #717171;
+}
+
 .footer {
+  width: 100%;
+  height: 550px;
+  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6807,29 +6873,47 @@ strong {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  position: relative;
+}
+
+.footer h2 {
+  color: #fff;
+  font-size: 48px;
+}
+
+.footer span, .footer p {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.35em;
+}
+
+.container-image {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  z-index: -10;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
-  height: 550px;
+  height: 100%;
   background-color: #fff;
   -webkit-background-size: cover;
           background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   color: #ffffff;
-  z-index: -1;
 }
 
-.footer h2 {
-  font-size: 48px;
-}
-
-.footer span, .footer p {
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 1.35em;
-}
-
-.footer::after {
+.container-image::after {
   position: absolute;
   content: '';
   width: 100%;
@@ -6844,6 +6928,8 @@ strong {
 }
 
 .footer-soc {
+  position: relative;
+  z-index: 20;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6862,6 +6948,7 @@ strong {
 }
 
 .footer-soc a {
+  z-index: 20;
   display: block;
   color: #000000;
   background-color: #fff;
@@ -6877,14 +6964,37 @@ strong {
   -webkit-transition: 0.6s;
   -o-transition: 0.6s;
   transition: 0.6s;
+  border: 1px solid #ffffff;
+}
+
+.footer-soc a .fa {
+  color: #3A0E3C;
 }
 
 .footer-soc a:hover {
+  cursor: pointer;
   background-color: rgba(0, 0, 0, 0);
+  border: 1px solid #ffffff;
 }
 
 .footer-soc a:hover .fa {
-  color: #3A0E3C;
+  color: #ffffff;
+}
+
+.footer-developer {
+  background-color: #222222;
+  text-align: center;
+  color: #ffffff;
+  padding: 20px 40px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 300;
+}
+
+.footer-developer p {
+  padding: 0;
+  margin: 0;
 }
 
 /*==========  Desktop First  ==========*/
@@ -6994,6 +7104,9 @@ strong {
     width: 70%;
     margin: 0 auto;
   }
+  .prev-w, .next-w {
+    margin-top: -50px;
+  }
 }
 
 @media (max-width: 575.98px) {
@@ -7080,6 +7193,28 @@ strong {
     line-height: 1.45;
     padding-left: 15px;
     padding-right: 15px;
+  }
+  .second-slider {
+    padding: 0 0;
+    margin-bottom: 60px;
+  }
+  .prev-w, .next-w {
+    top: 50%;
+    width: 38px;
+    hegiht: 38px;
+    margin-top: -40px;
+    margin-left: 10px;
+    line-height: 36px;
+  }
+  .next-w {
+    right: 0;
+    margin-right: 10px;
+  }
+  .prev-w:hover,
+  .next-w:hover {
+    background-color: rgba(125, 125, 125, 0.9);
+    text-decoration: none;
+    color: red;
   }
 }
 
